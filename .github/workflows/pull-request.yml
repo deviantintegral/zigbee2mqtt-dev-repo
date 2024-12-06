@@ -1,0 +1,22 @@
+name: Pull Request Tests
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+
+    steps:
+    - uses: actions/checkout@v3
+      
+    - name: Initialize repositories
+      run: |
+        chmod +x ./init.sh
+        ./init.sh
+      
+    - name: Build image
+      run: |
+        chmod +x ./build.sh
+        ./build.sh
