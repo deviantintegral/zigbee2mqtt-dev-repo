@@ -1,0 +1,5 @@
+packages:
+  - 'zigbee-herdsman'
+  - 'zigbee-herdsman-converters'
+  - 'zigbee2mqtt'
+  - 'zigbee2mqtt-frontend'

@@ -1,0 +1,11 @@
+{
+  "name": "zigbee2mqtt-dev-monorepo",
+  "version": "0.0.0",
+  "description": "A monorepo to build custom docker images of zigbee2mqtt",
+  "keywords": [],
+  "scripts": {
+    "build": "docker build -t zigbee2mqtt-dev ."
+  },
+  "author": "Andrew Berry <andrew@furrypaws.ca>",
+  "license": "GPL-3.0"
+}
