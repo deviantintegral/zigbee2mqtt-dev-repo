@@ -1,0 +1,6 @@
+zigbee2mqtt/dist
+zigbee2mqtt/node_modules
+zigbee2mqtt/data
+!zigbee2mqtt/data/configuration.example.yaml
+zigbee-herdsman/node_modules
+zigbee-herdsman-converters/node_modules
