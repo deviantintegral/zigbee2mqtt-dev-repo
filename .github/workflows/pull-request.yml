@@ -1,0 +1,22 @@
+name: Pull Request Tests
+
+on:
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '34 0 * * 0'
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+
+    steps:
+    - uses: actions/checkout@v3
+      
+    - name: Initialize repositories
+      run: |
+        ./init.sh
+      
+    - name: Build image
+      run: |
+        ./build.sh
