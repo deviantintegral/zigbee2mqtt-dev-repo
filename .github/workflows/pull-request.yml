@@ -15,10 +15,8 @@ jobs:
       
     - name: Initialize repositories
       run: |
-        chmod +x ./init.sh
         ./init.sh
       
     - name: Build image
       run: |
-        chmod +x ./build.sh
         ./build.sh
