@@ -30,6 +30,10 @@ RUN --mount=type=cache,target=/root/.cache,sharing=locked \
 COPY ./docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
+# Support the same data path as production images
+RUN mv /app/zigbee2mqtt/data /app
+RUN ln -s /app/data /app/zigbee2mqtt/data
+
 WORKDIR /app/zigbee2mqtt
 
 RUN git rev-parse --short HEAD > dist/.hash
