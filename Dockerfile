@@ -32,5 +32,7 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 WORKDIR /app/zigbee2mqtt
 
+RUN git rev-parse --short HEAD > dist/.hash
+
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD [ "/sbin/tini", "--", "node", "index.js"]
