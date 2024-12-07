@@ -28,7 +28,7 @@ RUN --mount=type=cache,target=/root/.cache,sharing=locked \
 
 RUN --mount=type=cache,target=/root/.cache,sharing=locked \
 --mount=type=cache,target=/pnpm/store,sharing=locked \
-  pnpm --filter zigbee-herdsman build && \ 
+  pnpm --filter zigbee-herdsman build && \
   pnpm --filter zigbee-herdsman-converters build && \
   pnpm --filter zigbee2mqtt-frontend build && \
   pnpm --filter zigbee2mqtt build
