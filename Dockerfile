@@ -26,7 +26,6 @@ RUN --mount=type=cache,target=/root/.cache,sharing=locked \
   pnpm --filter zigbee2mqtt add mqtt-packet && \
   pnpm list
 
-
 RUN --mount=type=cache,target=/root/.cache,sharing=locked \
 --mount=type=cache,target=/pnpm/store,sharing=locked \
   pnpm --filter zigbee-herdsman build && \ 
