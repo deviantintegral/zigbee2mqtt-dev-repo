@@ -18,7 +18,14 @@ jobs:
     - name: Initialize repositories
       run: |
         ./init.sh
+        touch zigbee2mqtt/test-build
+        touch zigbee2mqtt-frontend/test-build
+        touch zigbee-herdsman/test-build
+        touch zigbee-herdsman-converters/test-build
       
     - name: Build image
       run: |
         ./build.sh
+        docker run --rm zigbee2mqtt-dev sh -c '[ -f /app/zigbee2mqtt/node_modules/zigbee2mqtt-frontend/test-build ] && \
+          [ -f /app/zigbee2mqtt/node_modules/zigbee-herdsman/test-build ] && \
+          [ -f /app/zigbee2mqtt/node_modules/zigbee-herdsman-converters/test-build ]'
