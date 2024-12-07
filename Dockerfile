@@ -21,6 +21,7 @@ COPY zigbee2mqtt-frontend ./zigbee2mqtt-frontend
 
 RUN --mount=type=cache,target=/root/.cache,sharing=locked \
 --mount=type=cache,target=/pnpm/store,sharing=locked \
+  pnpm --filter zigbee2mqtt add zigbee-herdsman@workspace:* zigbee-herdsman-converters@workspace:* zigbee2mqtt-frontend@workspace:* && \
   pnpm install && \
   pnpm --filter zigbee2mqtt add mqtt-packet
 
