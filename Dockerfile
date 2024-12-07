@@ -22,9 +22,12 @@ COPY zigbee2mqtt-frontend ./zigbee2mqtt-frontend
 RUN --mount=type=cache,target=/root/.cache,sharing=locked \
 --mount=type=cache,target=/pnpm/store,sharing=locked \
   pnpm install && \
-  pnpm --filter zigbee2mqtt add mqtt-packet \
+  pnpm --filter zigbee2mqtt add mqtt-packet
+
+RUN --mount=type=cache,target=/root/.cache,sharing=locked \
+--mount=type=cache,target=/pnpm/store,sharing=locked \
   pnpm --filter zigbee-herdsman build && \ 
-  pnpm --filter zigbee-herdsman-converters build && \ 
+  pnpm --filter zigbee-herdsman-converters build && \
   pnpm --filter zigbee2mqtt build
 
 COPY ./docker-entrypoint.sh /usr/local/bin/
